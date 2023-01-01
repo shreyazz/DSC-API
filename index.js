@@ -27,7 +27,7 @@ const PORT = process.env.PORT || 3001;
 // setting up an empty GET Route
 app.get("/", (req, res) => {
   res.json({
-    message: "You've come to the right place... it's a GET request!!",
+    message: "You've come to the right place... it's a GET request at D&C API!!",
   });
 });
 
