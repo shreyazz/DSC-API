@@ -11,6 +11,10 @@ app.use(express.json());
 // connection to DB
 connectToDB();
 
+// routes
+app.use('/api', require('./routes/register'));
+app.use('/api', require('./routes/login'));
+
 // defining port
 const PORT = process.env.PORT || 3001;
 
