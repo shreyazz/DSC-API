@@ -11,9 +11,15 @@ app.use(express.json());
 // connection to DB
 connectToDB();
 
-// routes
-app.use('/api', require('./routes/register'));
-app.use('/api', require('./routes/login'));
+// user routes
+app.use('/api/auth', require('./routes/user/register'));
+app.use('/api/auth', require('./routes/user/login'));
+
+// blog routes
+app.use('/api/blog', require('./routes/blog/addBlog'));
+app.use('/api/blog', require('./routes/blog/getBlogs'));
+app.use('/api/blog', require('./routes/blog/getBlogById'));
+app.use('/api/blog', require('./routes/blog/deleteBlog'));
 
 // defining port
 const PORT = process.env.PORT || 3001;
