@@ -5,7 +5,7 @@ const blogModel = require("../../model/blog.model");
 router.post("/add", async (req, res) => {
   const { title, body, image, category } = req.body;
   try {
-    if (!title || !body || !image || !category) {
+    if (!title || !body || !category) {
       return res.status(422).json({ message: "Please fill all the data! 🔴" });
     }
     const blog = blogModel.findOne({ title });
